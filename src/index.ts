@@ -1,9 +1,19 @@
 import moment from 'moment';
 moment.locale( 'es' )
 
-const hoy = moment();
+const today = moment();
+const yesterday = moment().subtract(1, 'days');
+const tomorrow = moment().add(1, 'days');
 
-console.log( hoy.format( 'dddd Do MMMM YYYY' ) );
+const format = 'dddd Do MMMM YYYY';
 
+
+console.table(
+    {
+        yesterday: yesterday.format(format),
+        today: today.format(format),
+        tomorrow: tomorrow.format(format),
+    }
+);
 
 
